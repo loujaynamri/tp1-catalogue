@@ -3,7 +3,7 @@ import { ListeCoursComponent } from './composants/liste-cours/liste-cours';
 import { EnTete } from './composants/en-tete/en-tete';
 import { PiedPage } from './composants/pied-page/pied-page';
 import { DetailCoursComponent } from './composants/detail-cours/detail-cours';
-import { Cours } from './composants/liste-cours/liste-cours'; 
+import { Cours } from './model/cours';
 
 @Component({
   imports: [ListeCoursComponent,EnTete,PiedPage,DetailCoursComponent],
@@ -12,8 +12,9 @@ import { Cours } from './composants/liste-cours/liste-cours';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('catalogue-cours');
   coursSelectionne: Cours | null = null;    
-  onSelectionCours(c: Cours) {     this.coursSelectionne = c;   }
+  onSelectionCours(c: Cours) {    
+  this.coursSelectionne = c;  
+ }
 }
 

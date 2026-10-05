@@ -1,5 +1,5 @@
 import { Component , output, EventEmitter, Output} from '@angular/core';
-
+import { Cours } from '../../model/cours';
 @Component({
   imports: [],
   selector: 'app-liste-cours',
@@ -18,15 +18,10 @@ export class ListeCoursComponent {
   ]; 
   selectionner(c: Cours) {     
     this.coursActif = c;     
-    this.coursSelectionne.emit(c);   } 
+    this.coursSelectionne.emit(c);  
+  } 
 }
-// ng generate interface model/cours
-export interface Cours { 
-  titre: string;
-  categorie: string;
-  duree: string; 
-  places: number; 
-} 
+
 
 
 
