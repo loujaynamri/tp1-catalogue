@@ -1,11 +1,18 @@
 @if (cours) {
   <aside class="detail-cours">
     <h2>{{ cours.titre }}</h2>
-    <p>Catégorie : {{ cours.categorie }}</p>
+    @switch (cours.categorie) {
+    @case ('Front-end') { <span class="badge badge--frontend">{{ cours.categorie | uppercase }}</span> }
+    @case ('Back-end') { <span class="badge badge--backend">{{ cours.categorie | uppercase
+    }}</span> }
+    @case ('Langage') { <span class="badge badge--langage">{{ cours.categorie | uppercase
+    }}</span> }
+    @default { <span class="badge badge--autre">{{ cours.categorie | uppercase }}</span> }
+    }
     <p>Durée : {{ cours.duree }}</p>
-    <p>Places disponibles : {{ cours.places }}</p>
+    <p>Places disponibles : {{ cours.placesRestantes | placesRestantes :10}}</p>
   </aside>
-} @else {
+  } @else {
   <aside class="detail-cours detail-cours--vide">
     <p>Sélectionnez un cours dans la liste pour voir son détail.</p>
   </aside>
