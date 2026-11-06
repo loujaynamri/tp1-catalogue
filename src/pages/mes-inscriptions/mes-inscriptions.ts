@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Session } from './../../services/session';
+import { Component, inject } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './mes-inscriptions.css',
   templateUrl: './mes-inscriptions.html',
 })
-export class MesInscriptions {}
+export class MesInscriptions {
+  session =inject(Session);
+}

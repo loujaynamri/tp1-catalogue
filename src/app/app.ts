@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Session } from './../services/session';
+import { Component, inject, signal } from '@angular/core';
 import { ListeCoursComponent } from './composants/liste-cours/liste-cours';
 import { EnTete } from './composants/en-tete/en-tete';
 import { PiedPage } from './composants/pied-page/pied-page';
 import { DetailCoursComponent } from './composants/detail-cours/detail-cours';
 import { Cours } from './model/cours';
-import { RouterOutlet ,RouterLink,RouterLinkActive} from '@angular/router';
+import { RouterOutlet ,RouterLink,RouterLinkActive, Router} from '@angular/router';
 
 @Component({
   imports: [EnTete, PiedPage, RouterLink, RouterLinkActive, RouterOutlet],
@@ -16,6 +17,12 @@ export class App {
   coursSelectionne: Cours | null = null;
   onSelectionCours(c: Cours) {
   this.coursSelectionne = c;
+ }
+ Session=inject(Session);
+ private router=inject(Router);
+ deconnecter(){
+  this.Session.deconnecter();
+  this.router.navigateByUrl('/');
  }
 }
 
