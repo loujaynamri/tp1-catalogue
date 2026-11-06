@@ -1,3 +1,4 @@
+import { Inscription } from './../pages/inscription/inscription';
 import { MesInscriptions } from './../pages/mes-inscriptions/mes-inscriptions';
 import { ListeCoursComponent } from './composants/liste-cours/liste-cours';
 import { Introuvable } from './../pages/introuvable/introuvable';
@@ -18,5 +19,11 @@ export const routes:Routes=[
       canActivate:[authGuard],
       title:'Mes inscriptions',
   },
+  {
+    path:'cours/:id/inscription',component:Inscription,
+    canActivate:[authGuard],
+    title:'Inscription'
+  },
+
   { path: '**', component: Introuvable, title: 'Page introuvable' },
 ]

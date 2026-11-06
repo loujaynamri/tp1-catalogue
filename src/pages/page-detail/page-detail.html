@@ -1,5 +1,6 @@
 @if (cours) {
   <app-detail-cours [cours]="cours"></app-detail-cours>
+  <a [routerLink]="['/cours',cours.id,'inscription']">S'inscrire a ce cours</a>
 }@else {
   <p>ce cours n'existe pas.</p>
 }
