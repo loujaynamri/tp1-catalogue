@@ -8,6 +8,7 @@
         <p>Catégorie : {{ c.categorie }}</p>
         <p>Durée : {{ c.duree }}</p>
         <p>Places disponibles : {{ c.placesRestantes }}</p>
+        <a [routerLink]="['/cours',c.id]">Voir le détail</a>
       </article>
     }@empty {
       <p class="liste-vide">aucun cours ne correspond à la recherche</p>

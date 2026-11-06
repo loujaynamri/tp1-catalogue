@@ -1,0 +1,6 @@
+@if (cours) {
+  <app-detail-cours [cours]="cours"></app-detail-cours>
+}@else {
+  <p>ce cours n'existe pas.</p>
+}
+<a routerLink="/cours"> <- retour au catalogue</a>

@@ -1,8 +1,23 @@
-<app-en-tete>
-</app-en-tete>
-<app-liste-cours (coursSelectionne)="onSelectionCours($event)">
+<app-en-tete></app-en-tete>
+<nav class="menu">
+  <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{exact:true}">
+    Accueil
+  </a>
+  <a routerLink="/cours" routerLinkActive="actif">
+    Mes inscriptions
+  </a>
+  <a routerLink="/connexion" routerLinkActive="actif">
+    Connexion
+  </a>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<!--<app-liste-cours (coursSelectionne)="onSelectionCours($event)">
 </app-liste-cours>
 <app-detail-cours [cours]="coursSelectionne"></app-detail-cours>
+-->
 @defer (on viewport) {
   <app-pied-page>
   </app-pied-page>
